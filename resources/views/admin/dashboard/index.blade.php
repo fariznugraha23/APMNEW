@@ -4,23 +4,41 @@
 	
 @section('contents')
 	<div class="row">
-		<div class="col-sm-6">
-			<div class="tile-stats tile-red">
-				<div class="icon"><i class="entypo-users"></i></div>
-				<div class="num" data-start="0" data-end="{{ $member }}" data-postfix="" data-duration="1500" data-delay="0">0</div>
+		<div class="col-sm-3">
+			<div class="tile-stats tile-green">
+				<div class="icon"><i class="entypo-thumbs-up"></i></div>
+				<div class="num" data-start="0" data-end="{{ $apms }}" data-postfix="" data-duration="1500" data-delay="0">0</div>
 				
-				<h3>Jumlah Member</h3>
+				<h3>Jumlah Nilai A</h3>
 			</div>
 			
 		</div>
-		
-		<div class="col-sm-6">
-		
+		<div class="col-sm-3">
 			<div class="tile-stats tile-green">
-				<div class="icon"><i class="entypo-book"></i></div>
-				<div class="num" data-start="0" data-end="{{ $buku }}" data-postfix="" data-duration="1500" data-delay="600">0</div>
+				<div class="icon"><i class="entypo-thumbs-up"></i></div>
+				<div class="num" data-start="0" data-end="{{ $skor }}" data-postfix="" data-duration="1500" data-delay="0">0</div>
 				
-				<h3>Jumlah Buku</h3>
+				<h3>Jumlah Skor</h3>
+			</div>
+			
+		</div>
+		<div class="col-sm-3">
+			<div class="tile-stats tile-green">
+				<div class="icon"><i class="entypo-thumbs-up"></i></div>
+				<div class="num" data-start="0" data-end="{{ $count }}" data-postfix="" data-duration="1500" data-delay="0">0</div>
+				
+				<h3>Jumlah Bobot</h3>
+			</div>
+			
+		</div>
+
+		<div class="col-sm-3">
+		
+			<div class="tile-stats tile-orange">
+				<div class="icon"><i class="entypo-folder"></i></div>
+				<div class="num" data-start="0" data-end="{{ $jumlah_data }}" data-postfix="" data-duration="1500" data-delay="600">0</div>
+				
+				<h3>Jumlah Data</h3>
 			</div>
 			
 		</div>

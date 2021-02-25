@@ -5,14 +5,16 @@ use App\Models\Buku;
 use App\Models\Transaksi;
 use App\Models\Kategori;
 use App\Models\Apm;
-use App\Models\File;
+use App\Models\Files;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
+use File;
 
 class HomeController extends Controller
 {
+	
     public function index()
     {
     	// Penting
@@ -158,7 +160,7 @@ class HomeController extends Controller
     {
 		//saya
 		$data['apms'] = Apm::find($id_apm);
-		$data['files'] = File::where('id_apm',$id_apm)->get();	
+		$data['files'] = Files::where('id_apm',$id_apm)->get();	
     	return view('front.buku.detail', $data);
     }
 
@@ -218,18 +220,35 @@ class HomeController extends Controller
 		// 	$upload = $uploadedFile->move($destinationPath, $nm_file);
 	    // 	$member->image = $nm_file;
     	// }
+		$custom = $r->title;
 		$file = $r->file('pdf');
-		$nama_file = time()."_".$file->getClientOriginalName();
+		$nama_file = time()."_".$custom."_".$file->getClientOriginalName();
 		$tujuan_upload = 'uploaded/file';
 		$file->move($tujuan_upload,$nama_file);
-		File::create([
+		Files::create([
             'id_apm' => $r->id_apm,
             'title' => $r->title,
             'name' => $nama_file,
 		]);
 		
-    	return redirect()->back();
+    	return redirect()->back();	
+    }
+	public function downloadEviden($id_file)
+    {
+		$file = Files::find($id_file);
+    	$myFile = public_path('uploaded/file/'.$file->name);
+    	$headers = ['Content-Type: application/pdf'];
+    	$newName = $file->title.'_'.time().'.pdf';
 
-		
+
+    	return response()->download($myFile, $newName, $headers);
+		return redirect()->back();
+    }
+	public function deleteEviden($id_file)
+    {
+		$file = Files::where('id_file',$id_file)->first();
+		File::delete('uploaded/file/'.$file->name);
+		Files::where('id_file',$id_file)->delete();
+		return redirect()->back();
     }
 }

@@ -40,6 +40,8 @@ Route::group(['namespace' => 'Front'], function () {
 			Route::get('/edit/{id_apm?}', 'HomeController@editApm')->name('home_editApm');
 			Route::post('/edit/store/{id_apm?}', 'HomeController@editApmStore')->name('home_editApmStore');
 			Route::post('/detail/upload', 'HomeController@uploadEviden')->name('home_uploadEviden');
+			Route::get('/detail/download/{id_file}', 'HomeController@downloadEviden')->name('home_downloadEviden');
+			Route::get('/detail/delete/{id_file}', 'HomeController@deleteEviden')->name('home_deleteEviden');
 		});
 	});
 });

@@ -149,7 +149,7 @@
 			
 			@if(Auth::check())
 			<div class="row">
-			<div class="col-sm-6">
+			<div class="col-sm-5">
 					<form class="contact-form" role="form" method="POST" action="{{ route('home_uploadEviden') }}" enctype="multipart/form-data">
 					{{ csrf_field() }}
 						<div class="form-group">
@@ -164,7 +164,7 @@
 						<button type="submit" class="btn btn-primary" name="submit">Submit</button>
 					</form>
 				</div>
-				<div class="col-sm-6">
+				<div class="col-sm-7">
 					<table class="table">
 						<thead>
 							<tr>
@@ -179,7 +179,11 @@
 							<tr>
 								<td ><?php echo $no; ?></th>
 								<td>{{$f->title}}</td>
-								<td><button type="button" class="btn btn-success">Download</button></td>	
+								<td>
+									<a href="{{ route('home_downloadEviden', ['id' => $f->id_file]) }}"><button  class="btn btn-success">Download</button></a>
+									<!-- <a href="{{ route('home_downloadEviden', ['id' => $f->id_file]) }}"><button  class="btn btn-warning">Edit</button></a> -->
+									<a href="{{ route('home_deleteEviden', ['id' => $f->id_file]) }}"><button  class="btn btn-danger">Delete</button></a>
+								</td>	
 							</tr>
 							<?php $no++;?>
 							@endforeach
