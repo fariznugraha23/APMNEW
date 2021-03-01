@@ -15,14 +15,17 @@ use File;
 class HomeController extends Controller
 {
 	
-    public function index()
+    public function index(Request $request)
     {
     	// Penting
 		$data['kategori'] = Kategori::orderBy('kategori')->get();
 		
     	$data['buku'] = Buku::where('stok', '>', 0)->limit(6)->get();
-		$data['apms']= Apm::orderBy('id_apm', 'ASC')->get();
-
+		// $data['s']= Apm::orderBy('id_apm', 'ASC')->get();
+		$data['apms']= Apm::when($request->keyword, function ($query) use ($request) {
+			$query->where('penilaian', 'like', "%{$request->keyword}%");
+		})->paginate();
+		// $data->appends($request->only('keyword'));
     	return view('front.home.index', $data);
     }
 

@@ -13,7 +13,7 @@
 			</div>
 			
 		</div>
-		<div class="col-sm-3">
+		<!-- <div class="col-sm-3">
 			<div class="tile-stats tile-green">
 				<div class="icon"><i class="entypo-thumbs-up"></i></div>
 				<div class="num" data-start="0" data-end="{{ $skor }}" data-postfix="" data-duration="1500" data-delay="0">0</div>
@@ -21,16 +21,16 @@
 				<h3>Jumlah Skor</h3>
 			</div>
 			
-		</div>
-		<div class="col-sm-3">
+		</div> -->
+		<!-- <div class="col-sm-3">
 			<div class="tile-stats tile-green">
 				<div class="icon"><i class="entypo-thumbs-up"></i></div>
-				<div class="num" data-start="0" data-end="{{ $count }}" data-postfix="" data-duration="1500" data-delay="0">0</div>
+				<div class="num" data-start="0" data-end="" data-postfix="" data-duration="1500" data-delay="0">0</div>
 				
 				<h3>Jumlah Bobot</h3>
 			</div>
 			
-		</div>
+		</div> -->
 
 		<div class="col-sm-3">
 		

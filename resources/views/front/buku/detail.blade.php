@@ -133,14 +133,18 @@
 						</thead>
 						<tbody>
 						<?php $no=1;?>
-							@foreach($files as $f)
+							@forelse($files as $f)
 							<tr>
 								<td ><?php echo $no; ?></th>
 								<td>{{$f->title}}</td>
-								<td><button type="button" class="btn btn-success">Download</button></td>	
+								<td><a href="{{ route('home_downloadEviden', ['id' => $f->id_file]) }}"><button  class="btn btn-success">Download</button></a></td>	
 							</tr>
+							@empty
+								<tr>
+                                	<td class="border px-4 py-2 text-center" colspan="3">Tidak ada data</td>
+								</tr>
 							<?php $no++;?>
-							@endforeach
+							@endforelse
 						</tbody>
 					</table>	
 				</div>
@@ -175,7 +179,7 @@
 						</thead>
 						<tbody>
 						<?php $no=1;?>
-							@foreach($files as $f)
+							@forelse($files as $f)
 							<tr>
 								<td ><?php echo $no; ?></th>
 								<td>{{$f->title}}</td>
@@ -185,8 +189,12 @@
 									<a href="{{ route('home_deleteEviden', ['id' => $f->id_file]) }}"><button  class="btn btn-danger">Delete</button></a>
 								</td>	
 							</tr>
+							@empty
+								<tr>
+                                	<td class="border px-4 py-2 text-center" colspan="3">Tidak ada data</td>
+								</tr>
 							<?php $no++;?>
-							@endforeach
+							@endforelse
 						</tbody>
 					</table>
 				</div>

@@ -176,6 +176,22 @@
                     @endforeach
                 </tbody>
             </table> -->
+			<form action="{{ url()->current() }}">
+				<div class="col-md-4">
+					<input type="text" name="keyword" class="form-control" placeholder="Search penilaian...">
+					<br>
+				</div>
+				<div class="col-md-1">
+					<button type="submit" class="btn btn-primary">
+						Search
+					</button>
+					<br>
+				</div>
+				<div class="col-md-7">
+					<br>
+				</div>
+			</form>
+			
 			<table class="table">
                     <thead>
                         <tr class="bg-gray-100">
@@ -224,6 +240,7 @@
                         @endforeach
                     </tbody>
                 </table>
+				{{ $apms->links() }}
 			<!-- <div class="row" id="portfolio-items">
 				@foreach($buku as $b)
 					<div class="item col-sm-4 col-xs-6 filter-design">
