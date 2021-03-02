@@ -139,11 +139,12 @@
 								<td>{{$f->title}}</td>
 								<td><a href="{{ route('home_downloadEviden', ['id' => $f->id_file]) }}"><button  class="btn btn-success">Download</button></a></td>	
 							</tr>
+							<?php $no++;?>
 							@empty
 								<tr>
                                 	<td class="border px-4 py-2 text-center" colspan="3">Tidak ada data</td>
 								</tr>
-							<?php $no++;?>
+							
 							@endforelse
 						</tbody>
 					</table>	
@@ -189,11 +190,12 @@
 									<a href="{{ route('home_deleteEviden', ['id' => $f->id_file]) }}"><button  class="btn btn-danger">Delete</button></a>
 								</td>	
 							</tr>
+							<?php $no++;?>
 							@empty
 								<tr>
                                 	<td class="border px-4 py-2 text-center" colspan="3">Tidak ada data</td>
 								</tr>
-							<?php $no++;?>
+							
 							@endforelse
 						</tbody>
 					</table>

@@ -152,6 +152,7 @@
 	<section class="portfolio-container">
 		
 		<div class="container">	
+			<div class="row">
 			<!-- <table class="table">
                 <thead >
                     <tr>
@@ -163,9 +164,9 @@
                 <tbody>
                     @foreach($apms as $row)
                         <tr>
-                        	<td class="border px-4 py-2"> {{ $row->id_area }}</td>
-                            <td class="border px-4 py-2">{{ $row->nama_area }}</td>
-                            <td class="border px-4 py-2">
+                        	<td  > {{ $row->id_area }}</td>
+                            <td  >{{ $row->nama_area }}</td>
+                            <td  >
                                
                                     <button wire:click="edit({{ $row->id_area }})" class="btn btn-warning">Edit</button>
                                     <button wire:click="delete({{ $row->id_area }})" class="btn btn-secondary">Hapus</button>
@@ -176,70 +177,71 @@
                     @endforeach
                 </tbody>
             </table> -->
-			<form action="{{ url()->current() }}">
-				<div class="col-md-4">
-					<input type="text" name="keyword" class="form-control" placeholder="Search penilaian...">
-					<br>
-				</div>
-				<div class="col-md-1">
-					<button type="submit" class="btn btn-primary">
-						Search
-					</button>
-					<br>
-				</div>
-				<div class="col-md-7">
-					<br>
-				</div>
-			</form>
-			
-			<table class="table">
-                    <thead>
-                        <tr class="bg-gray-100">
-                            <th class="px-4 py-2 w-20">Area</th>
-                            <th class="w-10">Area RB</th>
-                            <th class="px-4 py-2 w-60">Penilaian</th>
-                            <th class="px-4 py-2 w-60">A</th>
-                            <th class="px-4 py-2 w-60">B</th>
-                            <th class="px-4 py-2 w-20">C</th>
-                            <th class="w-10">Nilai</th>
-                            <th class="px-4 py-2 w-20">Kriteria</th>
-                            <th class="w-10">Bobot</th>
-                            <th class="w-10">Skor</th>
-                            <!-- <th class="px-4 py-2 w-20">Panduan Eviden</th>
-                            <th class="px-4 py-2 w-20">Catatan Eviden</th> -->
-							
-                            <th class="px-4 py-2 w-20">Action</th>
-							
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($apms as $row)
-                            <tr>
-                                <td class="border px-4 py-2">{{ $row->area_apm->nama_area }}</td>
-                                <td class="border px-4 py-2">{{ $row->area_rb }}</td>
-                                <td class="border px-4 py-2">{{ $row->penilaian }}</td>
-                                <td class="border px-4 py-2">{{ $row->a }}</td>
-                                <td class="border px-4 py-2">{{ $row->b }}</td>
-                                <td class="border px-4 py-2">{{ $row->c }}</td>
-                                <td class="border px-4 py-2" style="text-transform: uppercase;">{{ $row->nilai }}</td>
-                                <td class="border px-4 py-2">{{ $row->kriteria_apm->nama_kriteria }}</td>
-                                <td class="border px-4 py-2">{{ $row->bobot }}</td>
-                                <td class="border px-4 py-2">{{ $row->skor }}</td>
-                                <!-- <td class="border px-4 py-2">{{ $row->panduan_eviden }}</td>
-                                <td class="border px-4 py-2">{{ $row->catatan_eviden }}</td> -->
+				<form action="{{ url()->current() }}">
+					<div class="col-md-4">
+						<input type="text" name="keyword" class="form-control" placeholder="Search penilaian...">
+						<br>
+					</div>
+					<div class="col-md-1">
+						<button type="submit" class="btn btn-primary">
+							Search
+						</button>
+						<br>
+					</div>
+					<div class="col-md-7">
+						<br>
+					</div>
+				</form>
+				<div class="table-responsive-xl">
+				<table >
+						<thead>
+							<tr >
+								<th><center>Area</center></th>
+								<th><center>Area RB</center></th>
+								<th><center>Penilaian</center></th>
+								<th><center>A</center></th>
+								<th><center>B</center></th>
+								<th><center>C</center></th>
+								<th><center>Nilai</center></th>
+								<th><center>Kriteria</center></th>
+								<th><center>Bobot</center></th>
+								<th><center> Skor</center></th>
+								<!-- <th class="px-4 py-2 w-20">Panduan Eviden</th>
+								<th class="px-4 py-2 w-20">Catatan Eviden</th> -->
 								
-                                <td class="border px-4 py-2">                           
-                                    <center>
-                                        <a href="{{ route('home_detaileviden', ['id' => $row->id_apm]) }}"><button  class="btn btn-success">Eviden</button></a><br>
-										@if(Auth::check())
-											<a href="{{ route('home_editApm', ['id' => $row->id_apm]) }}"><button  class="btn btn-warning">Edit</button></a>
-										@endif	
-									</center>                               
-                                </td>	
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+								<th><center>Action</center></th>
+								
+							</tr>
+						</thead>
+						<tbody>
+							@foreach($apms as $row)
+								<tr>
+									<td >{{ $row->area_apm->nama_area }}</td>
+									<td ><center>{{ $row->area_rb }}</center></td>
+									<td >{{ $row->penilaian }}</td>
+									<td >{{ $row->a }}</td>
+									<td >{{ $row->b }}</td>
+									<td >{{ $row->c }}</td>
+									<td style="text-transform: uppercase;"><center>{{ $row->nilai }}</center></td>
+									<td >{{ $row->kriteria_apm->nama_kriteria }}</td>
+									<td ><center>{{ $row->bobot }}</center></td>
+									<td ><center> &nbsp{{ $row->skor }}</center></td>
+									<!-- <td  >{{ $row->panduan_eviden }}</td>
+									<td  >{{ $row->catatan_eviden }}</td> -->
+									
+									<td  >                           
+										<center>
+											<a href="{{ route('home_detaileviden', ['id' => $row->id_apm]) }}"><button  class="btn btn-success">Eviden</button></a><br>
+											@if(Auth::check())
+												<a href="{{ route('home_editApm', ['id' => $row->id_apm]) }}"><button  class="btn btn-warning">Edit</button></a>
+											@endif	
+										</center>                               
+									</td>	
+								</tr>
+							@endforeach
+						</tbody>
+					</table>
+					</div>
 				{{ $apms->links() }}
 			<!-- <div class="row" id="portfolio-items">
 				@foreach($buku as $b)
@@ -262,6 +264,7 @@
 					</div>
 				@endforeach	
 			</div>		 -->
+			</div>
 		</div>
 	</section>
 
