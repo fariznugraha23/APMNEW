@@ -3,16 +3,24 @@
 @section('title', 'Edit Data Apm')
 	
 @section('contents')
-	<section class="breadcrumb">	
+
+	<section class="breadcrumb">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-9">
-					<h1>Edit Data Apm</h1>	
+				<div class="col-sm-7">
+					<h1>Data Apm</h1>
+					<ol class="breadcrumb bc-3">
+						<li>
+							<a href="{{ route('home') }}"><i class="entypo-home"></i>Home</a>
+						</li>
+						<li class="active">
+							<strong>Edit Data Apm</strong>
+						</li>
+					</ol>			
 				</div>
 			</div>
 		</div>
 	</section>
-
 	<section class="contact-container">
 	
 		<div class="container">
@@ -26,7 +34,13 @@
 						
 						<div class="form-group">
                             <label for="validationCustom01">Area</label>
-							<input type="text" name="id_area" class="form-control" value="{{ $apms->id_area }}" placeholder="Area:" />
+							<!-- <input type="text" name="id_area" class="form-control" value="{{ $apms->id_area }}" placeholder="Area:" /> -->
+							<select name="id_area" id="id_area" class="form-control">
+                                <option value="{{ $apms->id_area }}">{{ $apms->area_apm->nama_area }}</option>
+                                @foreach ($area as $areas)
+                                    <option value="{{$areas->id_area}}">{{ $areas->nama_area}}</option>
+                                @endforeach
+                            </select>
 						</div>
 						
 						<div class="form-group">
@@ -48,15 +62,27 @@
 						</div>
                         <div class="form-group">
                         <label for="validationCustom01">C</label>
-							<input type="text" name="c" class="form-control" value="{{ $apms->c }}" placeholder="C:" />
+							<textarea name="c" class="form-control" value="{{ $apms->c }}" placeholder="{{ $apms->c }}" >{{ $apms->c }}</textarea>
 						</div>
                         <div class="form-group">
                         <label for="validationCustom01">Nilai</label>
-							<input type="text" name="nilai" class="form-control" value="{{ $apms->nilai }}" placeholder="Nilai:" />
+							<!-- <input type="text" name="nilai" class="form-control" value="{{ $apms->nilai }}" placeholder="Nilai:" /> -->
+							<select name="nilai" id="nilai" class="form-control" >
+                                <option value="{{ $apms->nilai }}">{{ $apms->nilai }}</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>   
+                            </select>
 						</div>
                         <div class="form-group">
                         <label for="validationCustom01">Kriteria</label>
-							<input type="text" name="id_kriteria" class="form-control" value="{{ $apms->id_kriteria }}" placeholder="Kriteria:" />
+							<!-- <input type="text" name="id_kriteria" class="form-control" value="{{ $apms->id_kriteria }}" placeholder="Kriteria:" /> -->
+							<select name="id_kriteria" id="id_kriteria" class="form-control">
+                                <option value="{{ $apms->id_kriteria }}">{{ $apms->kriteria_apm->nama_kriteria }}</option>
+                                @foreach ($kriteria as $kriterias)
+                                    <option value="{{$kriterias->id_kriteria}}">{{ $kriterias->nama_kriteria}}</option>
+                                @endforeach
+                            </select>
 						</div>
                         <div class="form-group">
                         <label for="validationCustom01">Bobot</label>

@@ -7,9 +7,27 @@
 		<div class="col-sm-3">
 			<div class="tile-stats tile-green">
 				<div class="icon"><i class="entypo-thumbs-up"></i></div>
-				<div class="num" data-start="0" data-end="{{ $apms }}" data-postfix="" data-duration="1500" data-delay="0">0</div>
+				<div class="num" data-start="0" data-end="{{ $apmsa }}" data-postfix="" data-duration="1500" data-delay="0">0</div>
 				
 				<h3>Jumlah Nilai A</h3>
+			</div>
+			
+		</div>
+		<div class="col-sm-3">
+			<div class="tile-stats tile-green">
+				<div class="icon"><i class="entypo-thumbs-up"></i></div>
+				<div class="num" data-start="0" data-end="{{ $apmsb }}" data-postfix="" data-duration="1500" data-delay="0">0</div>
+				
+				<h3>Jumlah Nilai B</h3>
+			</div>
+			
+		</div>
+		<div class="col-sm-3">
+			<div class="tile-stats tile-green">
+				<div class="icon"><i class="entypo-thumbs-up"></i></div>
+				<div class="num" data-start="0" data-end="{{ $apmsc }}" data-postfix="" data-duration="1500" data-delay="0">0</div>
+				
+				<h3>Jumlah Nilai C</h3>
 			</div>
 			
 		</div>

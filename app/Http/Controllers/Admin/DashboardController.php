@@ -17,7 +17,10 @@ class DashboardController extends Controller
 
     public function index()
     {
-        $data['apms'] = Apm::where('nilai', 'A')->count();
+        $data['apmsa'] = Apm::where('nilai', 'A')->count();
+        $data['apmsb'] = Apm::where('nilai', 'B')->count();
+        $data['apmsc'] = Apm::where('nilai', 'C')->count();
+
         $data['bobot'] = Apm::where('bobot', 'A')->count();
         $data['skor'] = DB::table('apms')->count('skor');
         $data['jumlah_data'] = Apm::count();

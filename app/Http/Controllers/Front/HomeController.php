@@ -5,6 +5,8 @@ use App\Models\Buku;
 use App\Models\Transaksi;
 use App\Models\Kategori;
 use App\Models\Apm;
+use App\Models\AreaApm;
+use App\Models\KriteriaApm;
 use App\Models\Files;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -172,6 +174,9 @@ class HomeController extends Controller
     	// Penting
 
 		$data['apms'] = Apm::find($id_apm);
+		$data['kriteria'] = KriteriaApm::orderBy('id_kriteria','ASC')->get();
+		$data['area'] = AreaApm::orderBy('id_area','ASC')->get();
+
 
 		return view('front.edit.index', $data);
     }
