@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
 use File;
+use DB;
 
 class HomeController extends Controller
 {
@@ -20,6 +21,13 @@ class HomeController extends Controller
     public function index(Request $request)
     {
     	// Penting
+		$data['apmsa'] = Apm::where('nilai', 'A')->count();
+        $data['apmsb'] = Apm::where('nilai', 'B')->count();
+        $data['apmsc'] = Apm::where('nilai', 'C')->count();
+
+        $data['bobot'] = Apm::where('bobot', 'A')->count();
+        $data['skor'] = DB::table('apms')->count('skor');
+        $data['jumlah_data'] = Apm::count();
 		$data['kategori'] = Kategori::orderBy('kategori')->get();
 		
     	$data['buku'] = Buku::where('stok', '>', 0)->limit(6)->get();
@@ -192,6 +200,15 @@ class HomeController extends Controller
 		$apm->nilai = $r->nilai;
     	$apm->id_kriteria = $r->id_kriteria;
 		$apm->bobot = $r->bobot;
+		if($r->nilai=='A'){
+            $hasil=($r->bobot)/1;
+        }elseif($r->nilai=='B'){
+            $hasil=($r->bobot)/2;
+        }elseif($r->nilai=='C'){
+            $hasil=NULL;
+        }
+		$apm->skor = $hasil;
+		
 
     	// if ($r->password != NULL) {
     	// 	$member->password = bcrypt($r->password);

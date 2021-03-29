@@ -32,22 +32,22 @@
 						<span>Dashboard</span>
 					</a>
 				</li>
-				<!-- @if(Auth::user()->id_role == 1)
+				@if(Auth::user()->id_role == 1)
 				<li {{ Request::is('admin/buku*') ? 'class=active' : '' }}>
 					<a href="{{ route('buku') }}">
 						<i class="entypo-book"></i>
 						<span>List Buku</span>
 					</a>
 				</li>
-				@endif -->
-				<!-- @if(Auth::user()->id_role == 1)
+				@endif
+				@if(Auth::user()->id_role == 1)
 				<li {{ Request::is('admin/kategori*') ? 'class=active' : '' }}>
 					<a href="{{ route('kategori') }}">
 						<i class="entypo-book"></i>
 						<span>List Kategori</span>
 					</a>
 				</li>
-				@endif -->
+				@endif
 				<!-- <li {{ Request::is('admin/transaksi*') ? 'class=active' : '' }}>
 					<a href="{{ route('transaksi') }}">
 						<i class="entypo-print"></i>
