@@ -92,26 +92,50 @@
 	<div class="container">
 	<div class="row">
 		<div class="col-sm-3">
-			<center><h1>{{ $apmsa }}</h1>
-			<h3>Jumlah Nilai A </h3></center>
-			<!-- <div class="progress">
-			<div class="progress-bar bg-success" role="progressbar" style="width: {{ $apmsa }}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{ $apmsa }}</div>
-			</div> -->
+		<center>
+			<table >
+				<tr>
+					<td style="text-align:right;" width="50%"><h1>{{ $apmsa }}</h1></td>
+					<td style="text-align:left;" width="50%"></td>
+				</tr>
+			</table>
+			<p style="font-size:150%"><h4>Jumlah Nilai A </h4></p>
+
+			
+			</center>
 		</div>
 		<div class="col-sm-3">
-			<center><h1>{{ $apmsb }}</h1>
-			<h3>Jumlah Nilai B </h3></center>
 			<!-- <div class="progress">
 			<div class="progress-bar bg-info" role="progressbar" style="width: {{ $apmsb }}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">{{ $apmsb }}</div>
 			</div> -->
+			<center>
+			<table >
+				<tr>
+					<td style="text-align:right;" width="50%"><h1>{{ $apmsb }}</h1></td>
+					<td style="text-align:left;" width="50%"></td>
+				</tr>
+			</table>
+			<p style="font-size:150%"><h4>Jumlah Nilai B </h4></p>
+
+			
+			</center>
 		</div>
 		<div class="col-sm-3">
-			<center><h1>{{ $apmsc }}</h1>
-			<h3>Jumlah Nilai C </h3></center>
+			
 			<!-- <div class="progress">
 			<div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">{{ $apmsc }}</div>
 			</div> -->
+			<center>
+			<table >
+				<tr>
+					<td style="text-align:right;" width="50%"><h1>{{ $apmsc }}</h1></td>
+					<td style="text-align:left;" width="50%"></td>
+				</tr>
+			</table>
+			<p style="font-size:150%"><h4>Jumlah Nilai C </h4></p>
+
 			
+			</center>
 		</div>
 
 		<div class="col-sm-3">
@@ -122,7 +146,7 @@
 					<td style="text-align:left;" width="50%">/{{ $jumlah_data }}</td>
 				</tr>
 			</table>
-			<p style="font-size:150%">Jumlah Data Terisi</p>
+			<p style="font-size:150%"><h4>Jumlah Data Terisi</h4></p>
 
 			
 			</center>

@@ -2,10 +2,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Neon Admin Panel" />
+<meta name="description" content="Pengadilan Agama Jakarta Selatan 2021" />
 <meta name="author" content="" />
 
-<title>Neon | Frontend</title>
+<title>APM | PA Jakartaselatan</title>
 
 
 <link rel="stylesheet" href="{{ asset('assets') }}/front/css/bootstrap.css">

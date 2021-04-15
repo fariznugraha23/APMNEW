@@ -3,11 +3,11 @@
 
 	<div class="row">
 	
-		<div class="col-md-12">
+		<div class="col-md-12" >
 			
-			<header class="site-header">
+			<header class="site-header" style="background-color:#000;" >
 			
-				<section class="site-logo">
+				<section class="site-logo" >
 				
 					<a href="{{ route('home') }}">
 						<img src="{{ asset('assets') }}/front/images/logo@2x.png" width="120" />
@@ -65,9 +65,14 @@
 									</li>
 								</ul>
 							</li>
-						<li class="search">
-							<a href=""></a>
-							<img src="{{ asset('uploaded/member') }}/{{ Auth::user()->image }}" width="50px" class="img-circle" />
+						<li >
+							
+							<!-- <a href=""></a> -->
+							<img style="background-color:#fff;border: 2px solid white;" src="{{ asset('uploaded/member') }}/{{ Auth::user()->image }}" width="50px" class="img-circle" />
+							<!-- <a href=""></a> -->
+							
+						</li>
+						<li >
 						</li>
 						@endif
 					</ul>
