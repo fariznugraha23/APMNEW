@@ -35,6 +35,10 @@
 					<br />
 					<table class="table">
 						<tr>
+							<td style="font-weight: bold;">Nomor</td>
+							<td>{{ $apms->panduan_eviden }}</td>
+						</tr>
+						<tr>
 							<td style="font-weight: bold;">Area RB</td>
 							<td>{{ $apms->area_rb }}</td>
 						</tr>
@@ -82,6 +86,10 @@
 					<h3>{{ $apms->area_apm->nama_area }}</h3>
 					<br />
 					<table class="table">
+						<tr>
+						<td style="font-weight: bold;">Nomor</td>
+							<td>{{ $apms->panduan_eviden }}</td>
+						</tr>
 						<tr>
 							<td style="font-weight: bold;">Area RB</td>
 							<td>{{ $apms->area_rb }}</td>
@@ -163,7 +171,7 @@
 							<input type="text" class="form-control" id="exampleInputText1" name="title" placeholder="Title">
 						</div>
 						<div class="form-group">
-							<label for="exampleFile1">File Eviden</label>
+							<label for="exampleFile1">File Eviden (Maks. 2 MB)</label>
 							<input type="file" class="form-control" name="pdf" id="exampleFile1" >
 						</div>
 						<button type="submit" class="btn btn-primary" name="submit">Submit</button>

@@ -8,11 +8,11 @@
 			<a href="index.html"><i class="entypo-home"></i>Home</a>
 		</li>
 		<li class="active">
-			<strong>List Buku</strong>
+			<strong>Eviden</strong>
 		</li>
 	</ol>
 			
-	<h2>List Buku</h2>
+	<h2>Eviden</h2>
 
 	<br />
 	<div class="row">
@@ -32,40 +32,51 @@
 	<table class="table table-bordered datatable" id="table-1">
 		<thead>
 			<tr>
-				<th>ISBN</th>
-				<th>Judul Buku</th>
-				<th>Kategori Buku</th>
-				<th>Nama Pengarang</th>
-				<th>Penerbit</th>
-				<th>Tahun Terbit</th>
-				<th>Stok</th>
+				<th>Nomor</th>
+				<th>Area</th>
+				<th>Area RB</th>
+				<th>Penilaian</th>
+				<th>A</th>
+				<th>B</th>
+				<th>C</th>
+				<th>Nilai</th>
+				<th>Kriteria</th>
+				<th>Bobot</th>
+				<th>Skor</th>
 				<th colspan="2">Action</th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php $no = 1; ?>
-			@foreach($buku as $b)
+			@foreach($eviden as $row)
 				<tr class="odd gradeX">
-					<td>{{ $b->isbn }}</td>
-					<td>{{ $b->judul }}</td>
-					<td>{{ $b->kategori->kategori }}</td>
-					<td>{{ $b->pengarang }}</td>
-					<td>{{ $b->penerbit }}</td>
-					<td>{{ $b->tahun }}</td>
-					<td>{{ $b->stok }}</td>
+				<td >{{ $row->panduan_eviden}}</td>
+				<td >{{ $row->area_apm->nama_area }}</td>
+				<td ><center>{{ $row->area_rb }}</center></td>
+				<td >{{ $row->penilaian }}</td>
+				<td >{{ $row->a }}</td>
+				<td >{{ $row->b }}</td>
+				<td >{{ $row->c }}</td>
+				<td style="text-transform: uppercase;"><center>{{ $row->nilai }}</center></td>
+				<td >{{ $row->kriteria_apm->nama_kriteria }}</td>
+				<td ><center>{{ $row->bobot }}</center></td>
+				<td ><center> &nbsp{{ $row->skor }}</center></td>
 					<td width="10px">
-						<a href="{{ route('buku_edit', ['id' => $b->id]) }}" class="btn btn-success">Edit</a>
+						<a href="{{ route('buku_edit', ['id' => $row->id_apm]) }}" class="btn btn-success">Update</a>
+					</td>
+					<!-- <td width="10px">
+						<a href="{{ route('buku_edit', ['id' => $row->id]) }}" class="btn btn-success">Edit</a>
 					</td>
 					<td width="10px">
-						<button class="btn btn-danger" data-toggle="modal" data-target="#modal-delete" data-id="{{ $b->id }}">Delete</button>
+						<button class="btn btn-danger" data-toggle="modal" data-target="#modal-delete" data-id="{{ $row->id }}">Delete</button>
 						
 						{{-- <form action="{{ route('buku_delete') }}" method="post">
 							{{ csrf_field() }}
 
-							<input type="hidden" name="id" value="{{ $b->id }}">
+							<input type="hidden" name="id" value="{{ $row->id }}">
 							<button type="submit" class="btn btn-danger">Hapus</button>
 						</form> --}}
-					</td>
+					</td> -->
 				</tr>
 				@endforeach
 			</tbody>
@@ -74,7 +85,7 @@
 			<div class="col-md-12">
 				<div class="text-center">
 					<ul class="pagination">
-						{{ $buku->render() }}
+						{{ $eviden->render() }}
 					</ul>						
 				</div>
 			</div>

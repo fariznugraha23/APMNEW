@@ -33,7 +33,7 @@ class HomeController extends Controller
     	$data['buku'] = Buku::where('stok', '>', 0)->limit(6)->get();
 		// $data['s']= Apm::orderBy('id_apm', 'ASC')->get();
 		$data['apms']= Apm::when($request->keyword, function ($query) use ($request) {
-			$query->where('penilaian', 'like', "%{$request->keyword}%");
+			$query->where('penilaian', 'like', "%{$request->keyword}%")->orWhere('id_apm', 'like', "%{$request->keyword}%");
 		})->paginate();
 		// $data->appends($request->only('keyword'));
     	return view('front.home.index', $data);

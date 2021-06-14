@@ -234,7 +234,7 @@
 			<div class="row">
 				<form action="{{ url()->current() }}">
 					<div class="col-md-4">
-						<input type="text" name="keyword" class="form-control" placeholder="Search penilaian...">
+						<input type="text" name="keyword" class="form-control" placeholder="Cari Penilaian atau nomor...">
 						<br>
 					</div>
 					<div class="col-md-1">
@@ -251,6 +251,7 @@
 						<table class="table table-responsive-xl">
 							<thead>
 								<tr >
+									<th><center>Nomor</center></th>
 									<th><center>Area</center></th>
 									<th><center>Area RB</center></th>
 									<th><center>Penilaian</center></th>
@@ -260,7 +261,7 @@
 									<th><center>Nilai</center></th>
 									<th><center>Kriteria</center></th>
 									<th><center>Bobot</center></th>
-									<th><center> Skor</center></th>
+									<th><center>Skor</center></th>
 									<!-- <th class="px-4 py-2 w-20">Panduan Eviden</th>
 									<th class="px-4 py-2 w-20">Catatan Eviden</th> -->
 									
@@ -271,6 +272,7 @@
 							<tbody>
 								@foreach($apms as $row)
 									<tr>
+									<td >{{ $row->panduan_eviden}}</td>
 										<td >{{ $row->area_apm->nama_area }}</td>
 										<td ><center>{{ $row->area_rb }}</center></td>
 										<td >{{ $row->penilaian }}</td>
