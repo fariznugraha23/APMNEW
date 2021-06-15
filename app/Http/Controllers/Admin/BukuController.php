@@ -96,6 +96,11 @@ class BukuController extends Controller
             $hasil=NULL;
         }
 		$apm->skor = $hasil;
+		//sementara
+		if($r->panduan_eviden=="-"){
+			$no = $r->id_kriteria.".".$id_apm;
+		}
+		$apm->panduan_eviden = $no;
 
 	    //Upload File
     	// if ($r->hasFile('image')) {
