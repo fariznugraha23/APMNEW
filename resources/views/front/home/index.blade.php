@@ -99,7 +99,7 @@
 					<td style="text-align:left;" width="50%"></td>
 				</tr>
 			</table>
-			<p style="font-size:150%"><h4>Jumlah Nilai A </h4></p>
+			<p style="font-size:150%"><h4>Eviden Sudah Lengkap</h4></p>
 
 			
 			</center>
@@ -115,7 +115,7 @@
 					<td style="text-align:left;" width="50%"></td>
 				</tr>
 			</table>
-			<p style="font-size:150%"><h4>Jumlah Nilai B </h4></p>
+			<p style="font-size:150%"><h4>Eviden Belum Lengkap </h4></p>
 
 			
 			</center>
@@ -132,7 +132,7 @@
 					<td style="text-align:left;" width="50%"></td>
 				</tr>
 			</table>
-			<p style="font-size:150%"><h4>Jumlah Nilai C </h4></p>
+			<p style="font-size:150%"><h4>Eviden Kosong </h4></p>
 
 			
 			</center>

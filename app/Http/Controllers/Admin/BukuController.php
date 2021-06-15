@@ -22,7 +22,7 @@ class BukuController extends Controller
 		$search = $r->input('search');
 		if ($search) {
 			$data['search'] = $search;
-			$data['eviden'] = Apm::where('penilaian', 'like', '%'.$search.'%')->orWhere('panduan_eviden', 'like', '%'.$search.'%')->paginate();
+			$data['eviden'] = Apm::where('penilaian', 'like', '%'.$search.'%')->orWhere('panduan_eviden', 'like', '%'.$search.'%')->paginate(15);
 			return view('admin.buku.index', $data);
 		}
 		
@@ -88,6 +88,7 @@ class BukuController extends Controller
 		$apm->nilai = $r->nilai;
     	$apm->id_kriteria = $r->id_kriteria;
 		$apm->bobot = $r->bobot;
+		$hasil=NULL;
 		if($r->nilai=='A'){
             $hasil=($r->bobot)/1;
         }elseif($r->nilai=='B'){
@@ -97,9 +98,9 @@ class BukuController extends Controller
         }
 		$apm->skor = $hasil;
 		//sementara
-		if($r->panduan_eviden=="-"){
-			$no = $r->id_kriteria.".".$id_apm;
-		}
+
+		$no = $r->id_kriteria.".".$id_apm;
+
 		$apm->panduan_eviden = $no;
 
 	    //Upload File

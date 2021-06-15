@@ -208,7 +208,8 @@ class HomeController extends Controller
             $hasil=NULL;
         }
 		$apm->skor = $hasil;
-		
+		$no = $r->id_kriteria.".".$id_apm;
+		$apm->panduan_eviden = $no;
 
     	// if ($r->password != NULL) {
     	// 	$member->password = bcrypt($r->password);

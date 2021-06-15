@@ -31,7 +31,10 @@
 				<div class="col-md-6">
 					<form class="contact-form" role="form" method="post" action="{{ route('home_editApmStore', ['id' => $apms->id_apm]) }}" enctype="multipart/form-data">
 						{{ csrf_field() }}
-						
+						<div class="form-group">
+                            <label for="validationCustom01">Nomor</label>
+							<input type="text" name="panduan_eviden" class="form-control" value="{{ $apms->panduan_eviden }}" placeholder="Nomor :" />
+						</div>
 						<div class="form-group">
                             <label for="validationCustom01">Area</label>
 							<!-- <input type="text" name="id_area" class="form-control" value="{{ $apms->id_area }}" placeholder="Area:" /> -->

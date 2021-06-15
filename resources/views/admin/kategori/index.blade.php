@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 
-@section('title', 'Kategori Buku')
+@section('title', 'Kategori APM')
 	
 @section('contents')
 	<ol class="breadcrumb bc-3">
@@ -8,17 +8,17 @@
 			<a href="index.html"><i class="entypo-home"></i>Home</a>
 		</li>
 		<li class="active">
-			<strong>Kategori Buku</strong>
+			<strong>Kategori APM</strong>
 		</li>
 	</ol>
 			
-	<h2>Kategori Buku</h2>
+	<h2>Kategori APM</h2>
 
 	<br />
 	<div class="row">
 		<div class="col-md-8">
-            <button data-toggle="modal" data-target="#modal-delete" class="btn btn-primary">Tambah Data</button>
-			{{-- <a href="{{ route('kategori_create') }}" class="btn btn-primary">Tambah Data</a> --}}
+            <!-- <button data-toggle="modal" data-target="#modal-delete" class="btn btn-primary">Tambah Data</button>
+			{{-- <a href="{{ route('kategori_create') }}" class="btn btn-primary">Tambah Data</a> --}} -->
 		</div>
 		<div class="col-md-4">
 			<form class="form-inline" method="get">

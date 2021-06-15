@@ -5,7 +5,7 @@
 	
 		<div class="col-md-12" >
 			
-			<header class="site-header" style="background-color:#000;" >
+			<header class="site-header" >
 			
 				<section class="site-logo" >
 				

@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 
-@section('title', 'List Buku')
+@section('title', 'List Eviden')
 	
 @section('contents')
 	<ol class="breadcrumb bc-3">
