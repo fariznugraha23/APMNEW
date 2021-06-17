@@ -36,7 +36,7 @@
 				<li {{ Request::is('admin/buku*') ? 'class=active' : '' }}>
 					<a href="{{ route('buku') }}">
 						<i class="entypo-book"></i>
-						<span>APM EVIDEN</span>
+						<span>Daftar Eviden Kosong</span>
 					</a>
 				</li>
 				@endif

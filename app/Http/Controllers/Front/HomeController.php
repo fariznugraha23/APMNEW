@@ -24,7 +24,8 @@ class HomeController extends Controller
 		$data['apmsa'] = Apm::where('nilai', 'A')->count();
         $data['apmsb'] = Apm::where('nilai', 'B')->count();
         $data['apmsc'] = Apm::where('nilai', 'C')->count();
-
+		$data['kosong'] = Apm::orWhereNull('nilai')->count();
+		
         $data['bobot'] = Apm::where('bobot', 'A')->count();
         $data['skor'] = DB::table('apms')->count('skor');
         $data['jumlah_data'] = Apm::count();
@@ -209,6 +210,7 @@ class HomeController extends Controller
         }
 		$apm->skor = $hasil;
 		$no = $r->id_kriteria.".".$id_apm;
+		
 		$apm->panduan_eviden = $no;
 
     	// if ($r->password != NULL) {

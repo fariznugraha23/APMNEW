@@ -128,7 +128,7 @@
 			<center>
 			<table >
 				<tr>
-					<td style="text-align:right;" width="50%"><h1>{{ $apmsc }}</h1></td>
+					<td style="text-align:right;" width="50%"><h1>{{ $kosong }}</h1></td>
 					<td style="text-align:left;" width="50%"></td>
 				</tr>
 			</table>

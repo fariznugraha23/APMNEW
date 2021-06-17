@@ -27,7 +27,7 @@ class BukuController extends Controller
 		}
 		
 		$data['search'] = '';
-    	$data['eviden'] = Apm::orderBy('id_apm')->paginate(20);
+    	$data['eviden'] = Apm::orWhereNull('nilai')->paginate(20);
 
     	return view('admin.buku.index', $data);
     }
