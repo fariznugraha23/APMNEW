@@ -48,7 +48,7 @@
 						
 						<div class="form-group">
                             <label for="validationCustom01">Area RB</label>
-							<input type="text" name="area_rb" class="form-control" value="{{ $apms->area_rb }}" placeholder="Area RB:" />
+							<input type="number" name="area_rb" class="form-control" value="{{ $apms->area_rb }}" placeholder="Area RB:" />
 						</div>
 
 						<div class="form-group">
@@ -89,7 +89,7 @@
 						</div>
                         <div class="form-group">
                         <label for="validationCustom01">Bobot</label>
-							<input type="text" name="bobot" class="form-control" value="{{ $apms->bobot }}" placeholder="Bobot:" />
+							<input type="number" name="bobot" class="form-control" value="{{ $apms->bobot }}" placeholder="Bobot:" />
 						</div>
 						<!-- <div class="form-group">
 							<input type="file" name="image" class="form-control" />

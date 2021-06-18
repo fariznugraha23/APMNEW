@@ -165,6 +165,15 @@
 			<div class="col-sm-5">
 					<form class="contact-form" role="form" method="POST" action="{{ route('home_uploadEviden') }}" enctype="multipart/form-data">
 					{{ csrf_field() }}
+					@if($errors->any())
+					<div class="alert alert-danger">
+						<ul>
+							@foreach ($errors->all() as $error)
+								<li>{{ $error }}</li>
+							@endforeach
+						</ul>
+					</div>
+					@endif
 						<div class="form-group">
 							<label for="exampleInputText1">Title Eviden</label>
 							<input type="hidden" class="form-control" name="id_apm" value="{{$apms->id_apm}}">

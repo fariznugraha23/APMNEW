@@ -239,7 +239,7 @@ class HomeController extends Controller
         $this->validate($r,[
             'id_apm' => 'required',
             'title' => 'required',
-            'pdf' => 'required',
+            'pdf' => 'required|max:10000',
         ]);
 			    //Upload File
     	// if ($r->hasFile('image')) {
@@ -250,7 +250,9 @@ class HomeController extends Controller
 		// 	$upload = $uploadedFile->move($destinationPath, $nm_file);
 	    // 	$member->image = $nm_file;
     	// }
-		$custom = $r->title;
+
+		if($r->file()){
+			$custom = $r->title;
 		$file = $r->file('pdf');
 		$nama_file = time()."_".$custom."_".$file->getClientOriginalName();
 		$tujuan_upload = 'uploaded/file';
@@ -260,6 +262,10 @@ class HomeController extends Controller
             'title' => $r->title,
             'name' => $nama_file,
 		]);
+		}else{
+			return Redirect::back()->withErrors(['msg', 'The Message']);
+		}
+		
 		
     	return redirect()->back();	
     }
