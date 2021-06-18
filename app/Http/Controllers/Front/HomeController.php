@@ -170,19 +170,21 @@ class HomeController extends Controller
     }
 
 	//saya
-	public function detaileviden($id_apm)
+	public function detaileviden($slug)
     {
 		//saya
-		$data['apms'] = Apm::find($id_apm);
-		$data['files'] = Files::where('id_apm',$id_apm)->get();	
+		$apm= Apm::where('slug',$slug)->first();
+		$data['apms']= Apm::where('id_apm',$apm->id_apm)->first();
+		$data['files'] = Files::where('id_apm',$apm->id_apm)->get();	
     	return view('front.buku.detail', $data);
     }
 
-	public function editApm($id_apm)
+	public function editApm($slug)
     {
     	// Penting
-
-		$data['apms'] = Apm::find($id_apm);
+		$apm= Apm::where('slug',$slug)->first();
+		$data['apms']= Apm::where('id_apm',$apm->id_apm)->first();
+		// $data['apms'] = Apm::find($id_apm);
 		$data['kriteria'] = KriteriaApm::orderBy('id_kriteria','ASC')->get();
 		$data['area'] = AreaApm::orderBy('id_area','ASC')->get();
 

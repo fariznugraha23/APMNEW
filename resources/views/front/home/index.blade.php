@@ -288,9 +288,9 @@
 										
 										<td  >                           
 											<center>
-												<a href="{{ route('home_detaileviden', ['id' => $row->id_apm]) }}"><button  class="btn btn-success">Eviden</button></a><br>
+												<a href="{{ route('home_detaileviden', ['id' => $row->slug]) }}"><button  class="btn btn-success">Eviden</button></a><br>
 												@if(Auth::check())
-													<a href="{{ route('home_editApm', ['id' => $row->id_apm]) }}"><button  class="btn btn-warning">Edit</button></a>
+													<a href="{{ route('home_editApm', ['id' => $row->slug]) }}"><button  class="btn btn-warning">Edit</button></a>
 												@endif	
 											</center>                               
 										</td>	
