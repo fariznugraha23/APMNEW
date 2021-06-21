@@ -8,17 +8,17 @@
 			<a href="index.html"><i class="entypo-home"></i>Home</a>
 		</li>
 		<li class="active">
-			<strong>Kategori APM</strong>
+			<strong>Dokumen APM</strong>
 		</li>
 	</ol>
 			
-	<h2>Kategori APM</h2>
+	<h2>Dokumen APM</h2>
 
 	<br />
 	<div class="row">
 		<div class="col-md-8">
-            <!-- <button data-toggle="modal" data-target="#modal-delete" class="btn btn-primary">Tambah Data</button>
-			{{-- <a href="{{ route('kategori_create') }}" class="btn btn-primary">Tambah Data</a> --}} -->
+            <!-- <button data-toggle="modal" data-target="#modal-delete" class="btn btn-primary">Tambah Data</button> -->
+			<a href="{{ route('kategori_create') }}" class="btn btn-primary">Tambah Data</a> 
 		</div>
 		<div class="col-md-4">
 			<form class="form-inline" method="get">
@@ -30,51 +30,72 @@
 		
 	<br>
 	<br>
-	<table class="table table-bordered datatable" id="table-1">
-		<thead>
-			<tr>
-				<th>No</th>
-				<th>Kategori</th>
-				<th colspan="2">Action</th>
-			</tr>
-		</thead>
-		<tbody>
-            @php
-                $no = 1;
-            @endphp
-			@foreach($kategori as $k)
-				<tr class="odd gradeX">
-					<td>{{ $no++ }}</td>
-					<td>{{ $k->kategori }}</td>
-					<td width="10px">
-						<a href="{{ route('kategori_edit', ['id' => $k->id]) }}" class="btn btn-success">Edit</a>
-					</td>
-					<td width="10px">
-						<button class="btn btn-danger" data-toggle="modal" data-target="#modal-delete" data-id="{{ $k->id }}">Delete</button>
-						
-						{{-- <form action="{{ route('kategori_delete') }}" method="post">
-							{{ csrf_field() }}
-
-							<input type="hidden" name="id" value="{{ $k->id }}">
-							<button type="submit" class="btn btn-danger">Hapus</button>
-						</form> --}}
-					</td>
+	<div >
+		<table class="table table-bordered datatable" id="table-1">
+			<thead>
+				<tr >
+					<th><center>Nomor</center></th>
+					<th><center>Area</center></th>
+					<th><center>Area RB</center></th>
+					<th><center>Penilaian</center></th>
+					<th><center>A</center></th>
+					<th><center>B</center></th>
+					<th><center>C</center></th>
+					<th><center>Nilai</center></th>
+					<th><center>Kriteria</center></th>
+					<th><center>Bobot</center></th>
+					<th><center>Skor</center></th>
+					<!-- <th class="px-4 py-2 w-20">Panduan Eviden</th>
+					<th class="px-4 py-2 w-20">Catatan Eviden</th> -->
+					
+					<th><center>Action</center></th>
+					
 				</tr>
-			@endforeach
+			</thead>
+			<tbody>
+				@foreach($apms as $row)
+					<tr>
+					<td >{{ $row->panduan_eviden}}</td>
+						<td >{{ $row->area_apm->nama_area }}</td>
+						<td ><center>{{ $row->area_rb }}</center></td>
+						<td >{{ $row->penilaian }}</td>
+						<td >{{ $row->a }}</td>
+						<td >{{ $row->b }}</td>
+						<td >{{ $row->c }}</td>
+						<td style="text-transform: uppercase;"><center>{{ $row->nilai }}</center></td>
+						<td >{{ $row->kriteria_apm->nama_kriteria }}</td>
+						<td ><center>{{ $row->bobot }}</center></td>
+						<td ><center> &nbsp{{ $row->skor }}</center></td>
+						<!-- <td  >{{ $row->panduan_eviden }}</td>
+						<td  >{{ $row->catatan_eviden }}</td> -->
+						
+						<td  >                           
+							<center>
+								<a href="{{ route('home_detaileviden', ['id' => $row->slug]) }}"><button  class="btn btn-success">Eviden</button></a><br>
+								@if(Auth::check())
+									<a href="{{ route('home_editApm', ['id' => $row->slug]) }}"><button  class="btn btn-warning">Edit</button></a>
+								@endif	
+							</center>                               
+						</td>	
+					</tr>
+				@endforeach
 			</tbody>
 		</table>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="text-center">
-					<ul class="pagination">
-						{{ $kategori->render() }}
-					</ul>						
-				</div>
+	</div>
+
+	<div class="row">	
+		<div class="col-md-12">
+			<div class="text-center">
+				<ul class="pagination">
+				{{ $apms->links() }}
+				</ul>						
 			</div>
 		</div>
+	</div>
+
 @endsection
 
-@section('modal')
+<!-- @section('modal')
 	<div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog modal-sm" role="document">
 			<form action="{{ route('kategori_delete') }}" method="post">
@@ -132,4 +153,4 @@
 			$(this).find('input[name="id"]').val(id);
 		});
 	</script>
-@endsection
+@endsection -->

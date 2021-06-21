@@ -287,4 +287,15 @@ class HomeController extends Controller
 		Files::where('id_file',$id_file)->delete();
 		return redirect()->back();
     }
+	public function previewEviden($id_file)
+    {
+		$file = Files::find($id_file);
+    	$myFile = public_path('uploaded/file/'.$file->name);
+    	$headers = ['Content-Type: application/pdf'];
+    	$newName = $file->title.'_'.time().'.pdf';
+
+
+    	return response()->file($myFile, $headers);
+		return redirect()->back();
+    }
 }

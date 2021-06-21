@@ -145,7 +145,9 @@
 							<tr>
 								<td ><?php echo $no; ?></th>
 								<td>{{$f->title}}</td>
-								<td><a href="{{ route('home_downloadEviden', ['id' => $f->id_file]) }}"><button  class="btn btn-success">Download</button></a></td>	
+								<td><a href="{{ route('home_downloadEviden', ['id' => $f->id_file]) }}"><button  class="btn btn-success">Download</button></a>
+								<a href="{{ route('home_previewEviden', ['id' => $f->id_file]) }}"><button  class="btn btn-success">View</button></a>
+								</td>	
 							</tr>
 							<?php $no++;?>
 							@empty
