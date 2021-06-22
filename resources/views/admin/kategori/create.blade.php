@@ -20,7 +20,7 @@
 			
 			<div class="panel-body">
 				
-				<form action="{{ route('member_store') }}" method="post" role="form" class="form-horizontal form-groups-bordered" enctype="multipart/form-data">
+				<form action="{{ route('kategori_store') }}" method="post" role="form" class="form-horizontal form-groups-bordered" enctype="multipart/form-data">
 					{{ csrf_field() }}
 	
 					<div class="form-group">
@@ -73,7 +73,7 @@
 							<input type="text" name="c" class="form-control">
 						</div>
 					</div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
 						<label for="field-1" class="col-sm-3 control-label">Nilai</label>
 						
 						<div class="col-sm-5">
@@ -84,7 +84,7 @@
                                 <option value="C">C</option>   
                             </select>
 						</div>
-					</div>
+					</div> -->
                     <div class="form-group">
 						<label for="field-1" class="col-sm-3 control-label">Kriteria</label>
 						
@@ -101,7 +101,7 @@
 						<label for="field-1" class="col-sm-3 control-label">Bobot</label>
 						
 						<div class="col-sm-5">
-							<input type="text" name="number" class="form-control">
+							<input type="text" name="bobot" class="form-control">
 						</div>
 					</div>
 					<div class="form-group">

@@ -62,7 +62,7 @@
 				<td ><center>{{ $row->bobot }}</center></td>
 				<td ><center> &nbsp{{ $row->skor }}</center></td>
 					<td width="10px">
-						<a href="{{ route('buku_edit', ['id' => $row->id_apm]) }}" class="btn btn-success">Update</a>
+						<a href="{{ route('buku_edit', ['id' => $row->slug]) }}" class="btn btn-success">Update</a>
 					</td>
 					<!-- <td width="10px">
 						<a href="{{ route('buku_edit', ['id' => $row->id]) }}" class="btn btn-success">Edit</a>

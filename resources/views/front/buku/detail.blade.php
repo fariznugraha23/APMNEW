@@ -145,8 +145,8 @@
 							<tr>
 								<td ><?php echo $no; ?></th>
 								<td>{{$f->title}}</td>
-								<td><a href="{{ route('home_downloadEviden', ['id' => $f->id_file]) }}"><button  class="btn btn-success">Download</button></a>
-								<a href="{{ route('home_previewEviden', ['id' => $f->id_file]) }}"><button  class="btn btn-success">View</button></a>
+								<td><a href="{{ route('home_downloadEviden', ['id' => $f->slugs]) }}"><button  class="btn btn-success">Download</button></a>
+								<a href="{{ route('home_previewEviden', ['id' => $f->slugs]) }}"><button  class="btn btn-success">View</button></a>
 								</td>	
 							</tr>
 							<?php $no++;?>
@@ -204,9 +204,9 @@
 								<td ><?php echo $no; ?></th>
 								<td>{{$f->title}}</td>
 								<td>
-									<a href="{{ route('home_downloadEviden', ['id' => $f->id_file]) }}"><button  class="btn btn-success">Download</button></a>
-									<!-- <a href="{{ route('home_downloadEviden', ['id' => $f->id_file]) }}"><button  class="btn btn-warning">Edit</button></a> -->
-									<a href="{{ route('home_deleteEviden', ['id' => $f->id_file]) }}"><button  class="btn btn-danger">Delete</button></a>
+									<a href="{{ route('home_downloadEviden', ['id' => $f->slugs]) }}"><button  class="btn btn-success">Download</button></a>
+									<a href="{{ route('home_previewEviden', ['id' => $f->slugs]) }}"><button  class="btn btn-success">View</button></a>
+									<a href="{{ route('home_deleteEviden', ['id' => $f->slugs]) }}"><button  class="btn btn-danger">Delete</button></a>
 								</td>	
 							</tr>
 							<?php $no++;?>

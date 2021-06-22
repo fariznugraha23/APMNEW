@@ -5,7 +5,7 @@
 <meta name="description" content="Neon Admin Panel" />
 <meta name="author" content="" />
 
-<title>Neon | Dashboard</title>
+<title>APM | Dashboard</title>
 
 
 <link rel="stylesheet" href="{{ asset('assets') }}/admin/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">

@@ -11,7 +11,7 @@ class Files extends Model
     protected $primaryKey = "id_file";
     protected $fillable = [
 
-        'id_apm','title','name'
+        'id_apm','title','name','slugs'
 
     ];
     public function apm()

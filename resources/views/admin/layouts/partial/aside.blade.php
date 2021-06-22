@@ -2,8 +2,8 @@
 	<header class="logo-env">
 		<!-- logo -->
 		<div class="logo">
-			<a href="index.html">
-				<img src="{{ asset('assets') }}/admin/images/logo@2x.png" width="120" alt="" />
+			<a href="/">
+				<img src="{{ asset('assets') }}/admin/images/logoapm@2x.png" width="120" alt="" />
 			</a>
 		</div>
 			

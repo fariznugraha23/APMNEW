@@ -14,6 +14,7 @@ use App\Http\Controllers\Controller;
 use Auth;
 use File;
 use DB;
+use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
@@ -254,6 +255,7 @@ class HomeController extends Controller
 		if($r->file()){
 			$custom = $r->title;
 		$file = $r->file('pdf');
+		$slugfile = Str::slug($r->title, '-');
 		$nama_file = time()."_".$custom."_".$file->getClientOriginalName();
 		$tujuan_upload = 'uploaded/file';
 		$file->move($tujuan_upload,$nama_file);
@@ -261,6 +263,7 @@ class HomeController extends Controller
             'id_apm' => $r->id_apm,
             'title' => $r->title,
             'name' => $nama_file,
+			'slugs'=> $slugfile
 		]);
 		}else{
 			return Redirect::back()->withErrors(['msg', 'The Message']);
@@ -269,9 +272,10 @@ class HomeController extends Controller
 		
     	return redirect()->back();	
     }
-	public function downloadEviden($id_file)
+	public function downloadEviden($slugs)
     {
-		$file = Files::find($id_file);
+
+		$file = Files::where('slugs',$slugs)->first();
     	$myFile = public_path('uploaded/file/'.$file->name);
     	$headers = ['Content-Type: application/pdf'];
     	$newName = $file->title.'_'.time().'.pdf';
@@ -287,9 +291,9 @@ class HomeController extends Controller
 		Files::where('id_file',$id_file)->delete();
 		return redirect()->back();
     }
-	public function previewEviden($id_file)
+	public function previewEviden($slugs)
     {
-		$file = Files::find($id_file);
+		$file = Files::where('slugs',$slugs)->first();
     	$myFile = public_path('uploaded/file/'.$file->name);
     	$headers = ['Content-Type: application/pdf'];
     	$newName = $file->title.'_'.time().'.pdf';
