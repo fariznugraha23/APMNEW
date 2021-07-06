@@ -134,9 +134,9 @@
 					<table class="table">
 						<thead>
 							<tr>
-								<th scope="col">Nomor</th>
+								<th scope="col" style="text-align: center;">Nomor</th>
 								<th scope="col">Title</th>
-								<th scope="col">Action</th>
+								<th scope="col" style="text-align: center;" colspan="2">Action</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -145,8 +145,8 @@
 							<tr>
 								<td ><?php echo $no; ?></th>
 								<td>{{$f->title}}</td>
-								<td><a href="{{ route('home_downloadEviden', ['id' => $f->slugs]) }}"><button  class="btn btn-success">Download</button></a>
-								<a href="{{ route('home_previewEviden', ['id' => $f->slugs]) }}"><button  class="btn btn-success">View</button></a>
+								<td><a href="{{ route('home_downloadEviden', ['id' => $f->slugs]) }}"><button  class="btn btn-success">Download</button></a></td>
+								<td><a href="{{ route('home_previewEviden', ['id' => $f->slugs]) }}"><button  class="btn btn-info">View</button></a>
 								</td>	
 							</tr>
 							<?php $no++;?>
