@@ -90,6 +90,11 @@ Route::group(['namespace' => 'Admin', 'middleware' => CheckStatus::class], funct
 		Route::group(['prefix' => 'transaksi', 'middleware' => 'can:admin_transaksi'], function(){
 			Route::get('/', 'TransaksiController@index')->name('transaksi');
 			Route::get('/pdf', 'TransaksiController@pdf')->name('transaksi_pdf');
+			Route::get('/create', 'TransaksiController@create')->name('transaksi_create');
+			Route::post('/store', 'TransaksiController@store')->name('transaksi_store');
+			Route::get('/edit/{id?}', 'TransaksiController@edit')->name('transaksi_edit');
+			Route::put('/update/{id?}', 'TransaksiController@update')->name('transaksi_update');
+			Route::get('/delete/{id?}', 'TransaksiController@destroy')->name('transaksi_delete');
 		});
 	});
 });

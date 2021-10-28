@@ -8,8 +8,8 @@
 <title>APM | PA Jakartaselatan</title>
 
 
-<link rel="stylesheet" href="{{ asset('assets') }}/front/css/bootstrap.css">
-<link rel="stylesheet" href="{{ asset('assets') }}/front/css/font-icons/entypo/css/entypo.css">
-<link rel="stylesheet" href="{{ asset('assets') }}/front/css/neon.css">
+<link rel="stylesheet" href="{{ asset('public/assets') }}/front/css/bootstrap.css">
+<link rel="stylesheet" href="{{ asset('public/assets') }}/front/css/font-icons/entypo/css/entypo.css">
+<link rel="stylesheet" href="{{ asset('public/assets') }}/front/css/neon.css">
 
-<script src="{{ asset('assets') }}/front/js/jquery-1.11.0.min.js"></script>
+<script src="{{ asset('public/assets') }}/front/js/jquery-1.11.0.min.js"></script>

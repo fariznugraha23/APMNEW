@@ -7,7 +7,7 @@
 			<div class="col-sm-6">
 				
 				<a href="#">
-					<img src="{{ asset('assets') }}/front/images/logo@2x.png" width="100" />
+					<img src="{{ asset('public/assets') }}/front/images/logo@2x.png" width="100" />
 				</a>
 				
 			</div>

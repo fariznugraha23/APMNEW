@@ -3,7 +3,7 @@
 		<!-- logo -->
 		<div class="logo">
 			<a href="/">
-				<img src="{{ asset('assets') }}/admin/images/logoapm@2x.png" width="120" alt="" />
+				<img src="{{ asset('public/assets') }}/admin/images/logoapm@2x.png" width="120" alt="" />
 			</a>
 		</div>
 			
@@ -48,12 +48,12 @@
 					</a>
 				</li>
 				@endif
-				<!-- <li {{ Request::is('admin/transaksi*') ? 'class=active' : '' }}>
+				<li {{ Request::is('admin/transaksi*') ? 'class=active' : '' }}>
 					<a href="{{ route('transaksi') }}">
-						<i class="entypo-print"></i>
-						<span>Transaksi</span>
+						<i class="entypo-book"></i>
+						<span>LHKPN & LHKASN</span>
 					</a>
-				</li> -->
+				</li>
 				@if(Auth::user()->id_role == 1)
 				<li {{ Request::is('admin/member*') ? 'class=active' : '' }}>
 					<a href="{{ route('member') }}">

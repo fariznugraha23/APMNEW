@@ -10,7 +10,7 @@
 				<section class="site-logo" >
 				
 					<a href="{{ route('home') }}">
-						<img src="{{ asset('assets') }}/front/images/logo@2x.png" width="120" />
+						<img src="{{ asset('public/assets') }}/front/images/logo@2x.png" width="120" />
 						<!-- <h1>Perpustakaan Normal</h1> -->
 					</a>
 					
